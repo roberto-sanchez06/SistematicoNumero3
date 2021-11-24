@@ -46,6 +46,7 @@ namespace Sistematico3
             this.btnMostrarCalendario = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.nudID = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudID)).BeginInit();
@@ -158,7 +159,7 @@ namespace Sistematico3
             // 
             // btnMostrarCalendario
             // 
-            this.btnMostrarCalendario.Location = new System.Drawing.Point(701, 77);
+            this.btnMostrarCalendario.Location = new System.Drawing.Point(701, 138);
             this.btnMostrarCalendario.Name = "btnMostrarCalendario";
             this.btnMostrarCalendario.Size = new System.Drawing.Size(75, 54);
             this.btnMostrarCalendario.TabIndex = 6;
@@ -177,7 +178,7 @@ namespace Sistematico3
             // 
             // nudID
             // 
-            this.nudID.Location = new System.Drawing.Point(668, 30);
+            this.nudID.Location = new System.Drawing.Point(668, 91);
             this.nudID.Minimum = new decimal(new int[] {
             1,
             0,
@@ -192,11 +193,21 @@ namespace Sistematico3
             0,
             0});
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(689, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Id de prestamo";
+            // 
             // FrmCalendario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.nudID);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.btnMostrarCalendario);
@@ -212,6 +223,7 @@ namespace Sistematico3
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudID)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -234,6 +246,7 @@ namespace Sistematico3
         private System.Windows.Forms.DataGridViewTextBoxColumn Interes;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown nudID;
+        private System.Windows.Forms.Label label1;
     }
 }
 

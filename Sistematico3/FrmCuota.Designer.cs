@@ -58,6 +58,11 @@ namespace Sistematico3
             // 
             this.nudMonto.DecimalPlaces = 2;
             this.nudMonto.Location = new System.Drawing.Point(162, 110);
+            this.nudMonto.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.nudMonto.Minimum = new decimal(new int[] {
             1,
             0,

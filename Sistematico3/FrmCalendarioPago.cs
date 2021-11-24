@@ -30,10 +30,20 @@ namespace Sistematico3
                 return;
             }
             DateTime Fecha = c.FechaPago;
-            for(int i=0; i < c.Terminos; i++)
+
+            decimal interes, pagoPrinci, saldo = c.Principal;
+            for (int i=0; i < c.Terminos; i++)
             {
-                dataGridView1.Rows.Add(i+1, Fecha.AddMonths(i), (c.Tasa/100)*c.Principal_Pagado, c.Cuota-(c.Tasa / 100) * c.Principal_Pagado, c.Cuota_Pagado- c.Cuota - (c.Tasa / 100) * c.Principal_Pagado);
+                interes = saldo * (c.Tasa / 100);
+                pagoPrinci = c.Cuota - interes;
+                dataGridView1.Rows.Add(i+1, Fecha.AddMonths(i), interes,c.Cuota,pagoPrinci, saldo);
+                saldo -= pagoPrinci;
             }
+        }
+
+        private void FrmCalendarioPago_Load(object sender, EventArgs e)
+        {
+            llenarDtgv();
         }
     }
 }

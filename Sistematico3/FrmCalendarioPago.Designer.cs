@@ -92,6 +92,7 @@ namespace Sistematico3
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmCalendarioPago";
             this.Text = "FrmCalendarioPago";
+            this.Load += new System.EventHandler(this.FrmCalendarioPago_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
