@@ -16,8 +16,8 @@ namespace Sistematico3
     public partial class FrmCalendario : Form
     {
         private ICalendarioService calendarioService;
-        public int indexelegido;
-        public int ids;
+        //public int indexelegido;
+        //public int ids;
 
         public FrmCalendario(ICalendarioService calendarioService)
         {
@@ -113,37 +113,44 @@ namespace Sistematico3
         {
             FrmCalendarioPago frm = new FrmCalendarioPago();
             frm.calendarioS = calendarioService;
-            frm.Id = ids;
+            frm.Id = (int)nudID.Value;
             frm.ShowDialog();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
-                if ((e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count - 1))
-                {
-                   indexelegido  = e.RowIndex;
-                    //if (guna2DataGridView1.Rows[n].Cells[0].Value.ToString() == "")
-                    //{
-                    //    throw new ArgumentException();
-                    //}
-                     ids = Convert.ToInt32(dataGridView1.Rows[indexelegido].Cells[0].Value);
-                    Calendario c = calendarioService.FindAll().Find(x => x.Id == ids);
-                    if (c == null)
-                    {
-                        MessageBox.Show("Error");
-                        return;
-                    }
+                //if ((e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count - 1))
+                //{
+                //   indexelegido  = e.RowIndex;
+                //    //if (guna2DataGridView1.Rows[n].Cells[0].Value.ToString() == "")
+                //    //{
+                //    //    throw new ArgumentException();
+                //    //}
+                //     ids = Convert.ToInt32(dataGridView1.Rows[indexelegido].Cells[0].Value);
+                   
+                   
 
 
-                    btnMostrarCalendario.Visible = true;
-                }
-                else
-                {
-                    throw new Exception();
-                }
+                //    btnMostrarCalendario.Visible = true;
+                //}
+                //else
+                //{
+                //    throw new Exception();
+                //}
             
             
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //indexelegido = e.RowIndex;
+            //if (indexelegido != -1)
+            //{
+                
+            //    ids = Convert.ToInt32(dataGridView1.Rows[indexelegido].Cells[0].Value);
+            //    btnMostrarCalendario.Visible = true;
+            //}
         }
     }
 }

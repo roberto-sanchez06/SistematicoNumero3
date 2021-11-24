@@ -32,9 +32,6 @@ namespace Sistematico3
             this.cmbFinder = new System.Windows.Forms.ComboBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnFiltrar = new System.Windows.Forms.Button();
-            this.btnMostrarCalendario = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,9 +41,14 @@ namespace Sistematico3
             this.Tasa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Principal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Interes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.btnMostrarCalendario = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudID = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudID)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbFinder
@@ -86,38 +88,8 @@ namespace Sistematico3
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(611, 176);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(50, 309);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 4;
-            this.btnAgregar.Text = "Add";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.Location = new System.Drawing.Point(434, 26);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(120, 23);
-            this.btnFiltrar.TabIndex = 5;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
-            // btnMostrarCalendario
-            // 
-            this.btnMostrarCalendario.Location = new System.Drawing.Point(701, 77);
-            this.btnMostrarCalendario.Name = "btnMostrarCalendario";
-            this.btnMostrarCalendario.Size = new System.Drawing.Size(75, 54);
-            this.btnMostrarCalendario.TabIndex = 6;
-            this.btnMostrarCalendario.Text = "Mostrar Calendario";
-            this.btnMostrarCalendario.UseVisualStyleBackColor = true;
-            this.btnMostrarCalendario.Visible = false;
-            this.btnMostrarCalendario.Click += new System.EventHandler(this.btnMostrarCalendario_Click);
             // 
             // Id
             // 
@@ -164,6 +136,36 @@ namespace Sistematico3
             this.Interes.HeaderText = "Interes";
             this.Interes.Name = "Interes";
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(50, 309);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 4;
+            this.btnAgregar.Text = "Add";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Location = new System.Drawing.Point(434, 26);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(120, 23);
+            this.btnFiltrar.TabIndex = 5;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // btnMostrarCalendario
+            // 
+            this.btnMostrarCalendario.Location = new System.Drawing.Point(701, 77);
+            this.btnMostrarCalendario.Name = "btnMostrarCalendario";
+            this.btnMostrarCalendario.Size = new System.Drawing.Size(75, 54);
+            this.btnMostrarCalendario.TabIndex = 6;
+            this.btnMostrarCalendario.Text = "Mostrar Calendario";
+            this.btnMostrarCalendario.UseVisualStyleBackColor = true;
+            this.btnMostrarCalendario.Click += new System.EventHandler(this.btnMostrarCalendario_Click);
+            // 
             // numericUpDown1
             // 
             this.numericUpDown1.DecimalPlaces = 2;
@@ -173,11 +175,29 @@ namespace Sistematico3
             this.numericUpDown1.TabIndex = 7;
             this.numericUpDown1.Visible = false;
             // 
+            // nudID
+            // 
+            this.nudID.Location = new System.Drawing.Point(668, 30);
+            this.nudID.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudID.Name = "nudID";
+            this.nudID.Size = new System.Drawing.Size(120, 20);
+            this.nudID.TabIndex = 8;
+            this.nudID.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // FrmCalendario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.nudID);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.btnMostrarCalendario);
             this.Controls.Add(this.btnFiltrar);
@@ -190,6 +210,7 @@ namespace Sistematico3
             this.Load += new System.EventHandler(this.FrmCalendario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudID)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -212,6 +233,7 @@ namespace Sistematico3
         private System.Windows.Forms.DataGridViewTextBoxColumn Principal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Interes;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudID;
     }
 }
 

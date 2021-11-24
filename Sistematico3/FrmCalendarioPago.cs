@@ -24,7 +24,7 @@ namespace Sistematico3
         private void llenarDtgv()
         {
             Calendario c =calendarioS.FindAll().Find(x=>x.Id==Id);
-            if (c != null)
+            if (c == null)
             {
                 MessageBox.Show("No se ha encontrado el prestamo");
                 return;

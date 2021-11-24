@@ -93,9 +93,19 @@ namespace Sistematico3
             // nudTerminos
             // 
             this.nudTerminos.Location = new System.Drawing.Point(162, 191);
+            this.nudTerminos.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudTerminos.Name = "nudTerminos";
             this.nudTerminos.Size = new System.Drawing.Size(120, 20);
             this.nudTerminos.TabIndex = 4;
+            this.nudTerminos.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // dtpPaga
             // 
